@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/api/index" },
+    { "source": "/api/hub", "destination": "/api/index" },
+    { "source": "/api/svc/(.*)", "destination": "/api/index" }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    }
+  ]
+}
